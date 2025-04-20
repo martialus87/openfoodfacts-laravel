@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenFoodFacts\Laravel;
+namespace Hypoid\OpenFoodFactsLaravel;
 
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Collection;

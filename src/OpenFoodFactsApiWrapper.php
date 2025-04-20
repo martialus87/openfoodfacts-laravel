@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenFoodFacts\Laravel;
+namespace Hypoid\OpenFoodFactsLaravel;
 
 use GuzzleHttp\Client;
 use OpenFoodFacts\Api;

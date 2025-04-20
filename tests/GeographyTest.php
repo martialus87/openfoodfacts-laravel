@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenFoodFacts\Laravel\Tests;
+namespace Hypoid\OpenFoodFactsLaravel\Tests;
 
 use Illuminate\Support\Facades\Config;
 use OpenFoodFacts\Laravel\Facades\OpenFoodFacts as OpenFoodFactsFacade;

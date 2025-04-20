@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenFoodFacts\Laravel\Tests\Base;
+namespace Hypoid\OpenFoodFactsLaravel\Tests\Base;
 
 use OpenFoodFacts\Laravel\OpenFoodFactsServiceProvider;
 use Orchestra\Testbench\TestCase;
