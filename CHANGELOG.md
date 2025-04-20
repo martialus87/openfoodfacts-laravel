@@ -4,6 +4,7 @@
 
 * change all dependancies
 * adapt code for laravel 12
+* change name of package
 
 -------------------------------------
 
