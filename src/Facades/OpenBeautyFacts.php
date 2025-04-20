@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenFoodFacts\Laravel\Facades;
+namespace Hypoid\OpenFoodFacts-Laravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

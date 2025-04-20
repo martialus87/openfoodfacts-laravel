@@ -1,15 +1,20 @@
 {
-    "name": "openfoodfacts/openfoodfacts-laravel",
+    "name": "hypoid/openfoodfactslaravel",
     "description": "Open Food Facts API wrapper for Laravel",
     "keywords": [
         "openfoodfacts",
         "laravel",
-        "php"
+        "php",
+        "hypoid"
     ],
     "homepage": "https://github.com/openfoodfacts/openfoodfacts-laravel",
     "license": "MIT",
     "type": "library",
     "authors": [
+        {
+            "name": "Martial AUCLERC",
+            "email": "martialus87@free.fr"
+        },
         {
             "name": "Eddie Palmans",
             "email": "eddie@palmans.nl"
@@ -17,26 +22,19 @@
     ],
     "require": {
         "php": "^8.1",
-        "guzzlehttp/guzzle": "^7.4",
-        "illuminate/support": "^9.0|^10.0|^11.0",
         "openfoodfacts/openfoodfacts-php": "^0.3.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.9.5",
-        "larastan/larastan": "^2.9",
-        "orchestra/testbench": "^7.0|^8.0|^9.0",
-        "phpstan/phpstan": "^1.10",
-        "phpstan/phpstan-phpunit": "^1.3",
         "phpunit/phpunit": "^9.5.21|^10.5"
     },
     "autoload": {
         "psr-4": {
-            "OpenFoodFacts\\Laravel\\": "src"
+            "Hypoid\\OpenFoodFactsLaravel\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OpenFoodFacts\\Laravel\\Tests\\": "tests"
+            "Hypoid\\OpenFoodFactsLaravel\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "OpenFoodFacts\\Laravel\\OpenFoodFactsServiceProvider"
+                "Hypoid\\OpenFoodFactsLaravel\\OpenFoodFactsServiceProvider"
             ],
             "aliases": {
-                "OpenFoodFacts": "OpenFoodFacts\\Laravel\\Facades\\OpenFoodFacts"
+                "OpenFoodFacts": "Hypoid\\OpenFoodFactsLaravel\\Facades\\OpenFoodFacts"
             }
         }
     },

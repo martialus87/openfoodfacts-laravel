@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6]
+
+* change all dependancies
+* adapt code for laravel 12
+
+-------------------------------------
+
 ## [0.5.1](https://github.com/openfoodfacts/openfoodfacts-laravel/compare/v0.5.0...v0.5.1) (2025-03-04)
 
 
