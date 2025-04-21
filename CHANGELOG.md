@@ -2,7 +2,21 @@
 
 ## [0.6.1]
 
-- add possibility to select key for return barcode product date
+- add possibility to select key for return barcode product date ex : 
+  ``
+   $keys = [
+            'product_name',
+            'product_name_fr',
+            'brands',
+            'packaging',
+            'categories',
+            'nutriments' => [
+                'energy-kcal_100g',
+                'fat_100g',                
+                'sodium_100g'
+            ]
+    OpenFoodFacts::barcode($codeEan, $keys);
+    ``
 
 ## [0.6]
 

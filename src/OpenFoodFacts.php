@@ -43,15 +43,33 @@ class OpenFoodFacts extends OpenFoodFactsApiWrapper
         try {
             $doc = $this->api->getProduct($value);
             $data = $doc->getData();
-            if (empty($data)) {
-                return [];
-            }
-            else if (!empty($desiredKeys)) {
-                return array_intersect_key($data, array_flip($desiredKeys));
-            }
-            else {
-                return $doc->getData();
-            }
+            if (empty($data))
+               {return [];
+               }
+            else if (!empty($desiredKeys))
+               {foreach($desiredKeys as $key => $value)
+                   {if (is_array($value))
+                        {foreach ($value as $keya => $val)
+                            {if (isset($data[$key][$val]))
+                                $result[$val] = $data[$key][$val];
+                             else
+                                $result[$val] = null;
+                            }
+                        }
+                     else
+                        {if (isset($data[$value]))
+                            {$result[$value] = $data[$value];
+                            }
+                         else
+                            {$result[$value] = null;
+                            }
+                        }
+                   }
+                return $result;
+               }
+            else
+               {return $doc->getData();
+               }
 
             return empty($data->code) ? [] : $doc->getData();
         } catch (ProductNotFoundException) {
