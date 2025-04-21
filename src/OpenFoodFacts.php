@@ -14,7 +14,7 @@ class OpenFoodFacts extends OpenFoodFactsApiWrapper
 {
     protected int $max_results;
 
-    public function __construct(Container $app, string $geography = null, string $environment = 'food')
+    public function __construct(Container $app, ?string $geography = null, string $environment = 'food')
     {
         parent::__construct(
             [
@@ -34,7 +34,7 @@ class OpenFoodFacts extends OpenFoodFactsApiWrapper
      * @param string $value
      * @return array
      */
-    public function barcode(string $value): array
+    public function barcode(string $value, ?array $desiredKeys = []): array
     {
         if (empty($value)) {
             throw new InvalidArgumentException('Argument must represent a barcode');
@@ -42,8 +42,18 @@ class OpenFoodFacts extends OpenFoodFactsApiWrapper
 
         try {
             $doc = $this->api->getProduct($value);
+            $data = $doc->getData();
+            if (empty($data)) {
+                return [];
+            }
+            else if (!empty($desiredKeys)) {
+                return array_intersect_key($data, array_flip($desiredKeys));
+            }
+            else {
+                return $doc->getData();
+            }
 
-            return empty($doc->code) ? [] : $doc->getData();
+            return empty($data->code) ? [] : $doc->getData();
         } catch (ProductNotFoundException) {
             return [];
         }

@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.1]
+
+- add possibility to select key for return barcode product date
+
 ## [0.6]
 
 * change all dependancies
